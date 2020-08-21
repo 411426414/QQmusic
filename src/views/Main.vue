@@ -5,7 +5,6 @@
       @nav-click='toPath'
     >
     </main-header>
-
     <router-view></router-view>
   </div>
 </template>

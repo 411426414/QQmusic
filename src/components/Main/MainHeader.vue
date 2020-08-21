@@ -2,6 +2,7 @@
   <div class="main-header">
     <div class="title text-primary text-lg text-weight-7 text-center">{{ title }}</div>
 
+
     <div class="nav-list">
       <ul class="d-flex jc-around pt-3 text-md text-gay2">
         <li

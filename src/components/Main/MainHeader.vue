@@ -29,8 +29,8 @@ export default {
         { path: "/recommend", name: "推荐" },
         { path: "/singer", name: "歌手" },
         { path: "/rank", name: "排行" },
-        { path: "/search", name: "搜索" },
-      ],
+        { path: "/search", name: "搜索" }
+      ]
     };
   },
   methods: {
@@ -41,7 +41,7 @@ export default {
       if (path === this.$route.path) {
         return true;
       }
-      if (path === "/recommend" && this.router.path === "/") {
+      if (path === "/recommend" && this.$route.path === "/") {
         return true;
       }
       return false;

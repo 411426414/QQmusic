@@ -40,11 +40,11 @@ export default {
     isActive(path) {
       if (path === this.$route.path) {
         return true;
-      }
-      if (path === "/recommend" && this.$route.path === "/") {
+      }else if (path === "/recommend" && this.$route.path === "/") {
         return true;
+      }else {
+        return false;
       }
-      return false;
     },
   },
 };

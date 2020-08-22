@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 
 import './style.scss'
 
-import http from './http'
+import http from './http.js'
 Vue.prototype.$http = http;
 
 new Vue({

@@ -1,11 +1,10 @@
-
-//reset 
+// reset
 body {
     margin: 0;
 }
-ul {
-    margin: 0;
+ul{
     padding: 0;
+    margin: 0;
 }
 * {
     box-sizing: border-box;
@@ -17,26 +16,20 @@ li {
 a {
     text-decoration: none;
 }
-
-html {
+html{
     font-size: 14px;
 }
 
+// bg text color
 $color: (
-    'primary': #1a73e8,
-    'gray1': #fafafa,
-    'gray2': rgba(26, 26, 26, 0.5),
+    'primary': #1A73E8,
     'black': black,
-    'white': white
+    'white': white,
+    'gay1': #FAFAFA,
+    'gay2': rgba(26,26,26,0.5)
 );
-
-.w100 {
-    width: 100%;
-}
-
-//text color
-@each $key, $val in $color {
-    //text-primary : 
+@each $key,$val in $color {
+    //.text-primary: 1A73E8
     .text-#{$key} {
         color: $val;
     }
@@ -46,27 +39,24 @@ $color: (
 }
 
 //text layout
-@each $val in (left, center, right) {
+@each $val in (letf, center, right) {
     .text-#{$val} {
         text-align: $val;
     }
 }
 
-//flex
+// flex
 .d-flex {
     display: flex;
 }
-.flex-grow-1 {
+.flex-grow-1{
     flex-grow: 1;
 }
 .flex-1 {
     flex: 1;
 }
-.flex-wrap {
-    flex-wrap: wrap;
-}
 
-//jc-center 
+// js-center
 $flex-jc: (
     'start': flex-start,
     'end': flex-end,
@@ -75,7 +65,7 @@ $flex-jc: (
     around: space-around
 );
 @each $jcKey, $jcVal in $flex-jc {
-    //jc-center
+    // js-center
     .jc-#{$jcKey} {
         justify-content: $jcVal;
     }
@@ -106,9 +96,9 @@ $text-size: (
     }
 }
 
-//margin padding 
-$spacing-types: (m: margin, p: padding);
-$spacing-directions: (
+// margin padding mt- mx m
+$spacing-types: (m: margin, p:padding);
+$spacing-directions:(
     t: top,
     r: right,
     b: bottom,
@@ -122,32 +112,32 @@ $spacing-sizes: (
     4: 1.5,
     5: 3
 );
-$spacing-size-base: 1rem;
+$spacing-sizes-base: 1rem;
 
 @each $typeKey, $typeVal in $spacing-types {
-    @each $directionKey, $directionVal in $spacing-directions {
+    @each $directionsKey, $directionsVal in $spacing-directions {
         @each $sizeKey, $sizeVal in $spacing-sizes {
             //mt-0 0rem
-            .#{$typeKey}#{$directionKey}-#{$sizeKey} {
-                #{$typeVal}-#{$directionVal}: $sizeVal * $spacing-size-base;
+            .#{$typeKey}#{$directionsKey}-#{$sizeKey}{
+                #{$typeVal}-#{$directionsVal}: $sizeVal * $spacing-sizes-base
             }
         }
     }
 
     @each $sizeKey, $sizeVal in $spacing-sizes {
         //mx-0 0rem
-        .#{$typeKey}x-#{$sizeKey} {
-            #{$typeVal}-left: $sizeVal * $spacing-size-base;
-            #{$typeVal}-right: $sizeVal * $spacing-size-base;
+        .#{$typeKey}x-#{sizeKey} {
+            #{$typeVal}-left: $sizeVal * $spacing-sizes-base;
+            #{$typeVal}-right: $sizeVal * $spacing-sizes-base;
         }
         //my-0 0rem
-        .#{$typeKey}y-#{$sizeKey} {
-            #{$typeVal}-top: $sizeVal * $spacing-size-base;
-            #{$typeVal}-bottom: $sizeVal * $spacing-size-base;
+        .#{$typeKey}y-#{sizeKey} {
+            #{$typeVal}-top: $sizeVal * $spacing-sizes-base;
+            #{$typeVal}-bottom: $sizeVal * $spacing-sizes-base;
         }
         //-0 0rem
-        .#{$typeKey}-#{$sizeKey} {
-            #{$typeVal}: $sizeVal * $spacing-size-base;
+        .#{$typeKey}-#{sizeKey} {
+            #{$typeVal}: $sizeVal * $spacing-sizes-base;
         }
     }
 }
@@ -162,7 +152,7 @@ $text-weight: (
     6: 600,
     7: 700,
     8: 800,
-    9: 900
+    9: 900,
 );
 @each $key, $val in $text-weight {
     .text-weight-#{$key} {
@@ -185,30 +175,18 @@ $pos-sizes: (
     4: 1.5,
     5: 3
 );
-$pos-size-base: 1rem;
-@each $directionVal in (left, top, right, bottom) {
+$pos-sizes-base: 1rem;
+@each $directionsVal in (left, top, right, bottom) {
     @each $sizeKey, $sizeVal in $pos-sizes {
-        //t-1: top: 0.25rem;
-        .#{$directionVal}-#{$sizeKey} {
-            #{$directionVal}: $sizeVal * $pos-size-base;
+        //t-1: top: 0.25rem
+        .#{$directionsVal}-#{$sizeKey}{
+            #{$directionsVal}: $sizeVal * $pos-sizes-base
         }
     }
 }
 
 //nav active
-.nav-active {
-    color: #1a73e8;
+.nav-active{
+    color: #1A73E8;
     font-weight: 700;
-}
-
-//singer active
-.singer-active {
-    color: white;
-    background-color: #1a73e8;
-    border-radius: 0.6rem;
-}
-
-//shadow
-.shadow {
-    box-shadow: 1px 1px 10px #ccc;
 }
